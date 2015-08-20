@@ -1,0 +1,46 @@
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+   <env:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:To env:mustUnderstand="true">https://145.1.254.25:8400/HCE/services</wsa:To>
+      <wsa:Action>http://globalplatform.org/globalservicemanagement/GlobalServiceManagementCallBack/DeployService</wsa:Action>
+      <wsa:MessageID>urn:uuid:66ce3c02-dd87-4c87-92b6-baddc29a2154</wsa:MessageID>
+   </env:Header>
+   <env:Body>
+      <ns4:DeployServiceResponse xmlns:ns2="http://namespaces.globalplatform.org/systems-profiles/1.1.2" xmlns:ns3="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns4="http://namespaces.globalplatform.org/systems-messaging/2.1.0" xmlns:ns5="http://www.w3.org/2000/09/xmldsig#">
+         <ns4:FunctionExecutionStatus>
+            <ns4:Status>EXECUTED_SUCCESS</ns4:Status>
+            <ns4:StatusCodeData>
+               <ns4:Reason/>
+               <ns4:Message/>
+            </ns4:StatusCodeData>
+         </ns4:FunctionExecutionStatus>
+         <ns4:Extensions Definition="http://www.gi-de.com/gd-extionsion-1.0.0">
+            <ns3:HceCardInfo>
+               <ns3:UserId>9528</ns3:UserId>
+               <ns3:CpsId>17ecde67-7b6c-474f-a1fe-c3d03ed8de56</ns3:CpsId>
+               <ns3:UserName/>
+               <ns3:IDType/>
+               <ns3:IDValue/>
+               <ns3:Email/>
+               <ns3:PAN>6223190000016102</ns3:PAN>
+               <ns3:ApplyDate>2015-07-24+08:00</ns3:ApplyDate>
+               <ns3:ValidateLUKCount>0</ns3:ValidateLUKCount>
+               <ns3:TokenPAN>6235240000020010290</ns3:TokenPAN>
+               <ns3:ExpireDate>2018-10-09+08:00</ns3:ExpireDate>
+               <ns3:Status>1</ns3:Status>
+               <ns3:Lost>false</ns3:Lost>
+               <ns3:Locked>false</ns3:Locked>
+               <ns3:DeviceModel>H60-L11</ns3:DeviceModel>
+               <ns3:OsVersion>4.4.2</ns3:OsVersion>
+               <ns3:DeviceId/>
+               <ns3:IMEI>864387021113283</ns3:IMEI>
+               <ns3:WalletName>‘∆÷ß∏∂”¶”√</ns3:WalletName>
+               <ns3:WalletSignature/>
+               <ns3:WalletVersion/>
+            </ns3:HceCardInfo>
+         </ns4:Extensions>
+         <ns4:ResponseData>
+            <ns4:ServiceInstanceState>1</ns4:ServiceInstanceState>
+         </ns4:ResponseData>
+      </ns4:DeployServiceResponse>
+   </env:Body>
+</env:Envelope>

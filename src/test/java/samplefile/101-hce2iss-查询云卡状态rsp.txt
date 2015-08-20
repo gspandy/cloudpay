@@ -1,0 +1,36 @@
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+   <env:Header/>
+   <env:Body>
+      <ns2:GetServiceStateResponse xmlns:ns2="http://namespaces.globalplatform.org/systems-messaging/2.1.0" xmlns:ns3="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns4="http://namespaces.globalplatform.org/systems-profiles/1.1.2" xmlns:ns5="http://www.w3.org/2000/09/xmldsig#">
+         <ns2:FunctionExecutionStatus>
+            <ns2:Status>EXECUTED_SUCCESS</ns2:Status>
+         </ns2:FunctionExecutionStatus>
+         <ns2:Extensions Definition="http://www.gi-de.com/gd-extionsion-1.0.0">
+            <ns3:HceCardInfo>
+               <ns3:UserId>RBB01</ns3:UserId>
+               <ns3:CpsId>23b1ae8c-0148-4e48-8a67-30648d6a27f5</ns3:CpsId>
+               <ns3:UserName>RB01</ns3:UserName>
+               <ns3:IDType>20</ns3:IDType>
+               <ns3:IDValue>RBB01</ns3:IDValue>
+               <ns3:Email/>
+               <ns3:PAN>6223182000280101</ns3:PAN>
+               <ns3:ApplyDate>2015-07-22+08:00</ns3:ApplyDate>
+               <ns3:ActivateDate>2015-07-22+08:00</ns3:ActivateDate>
+               <ns3:ValidateLUKCount>30</ns3:ValidateLUKCount>
+               <ns3:TokenPAN>6251640000020014360</ns3:TokenPAN>
+               <ns3:ExpireDate>2018-10-09+08:00</ns3:ExpireDate>
+               <ns3:Status>21</ns3:Status>
+               <ns3:Lost>false</ns3:Lost>
+               <ns3:Locked>false</ns3:Locked>
+               <ns3:DeviceModel>PE-TL10</ns3:DeviceModel>
+               <ns3:OsVersion>4.4.2</ns3:OsVersion>
+               <ns3:DeviceId/>
+               <ns3:IMEI>864601021087358</ns3:IMEI>
+               <ns3:WalletName>»ãÍ¨Éú»î</ns3:WalletName>
+               <ns3:WalletSignature/>
+               <ns3:WalletVersion>2.0.3</ns3:WalletVersion>
+            </ns3:HceCardInfo>
+         </ns2:Extensions>
+      </ns2:GetServiceStateResponse>
+   </env:Body>
+</env:Envelope>

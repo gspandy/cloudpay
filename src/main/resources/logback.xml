@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- scan=true表示该文件发生改变时配置将会重新加载 -->
+<!-- scanPeriod表示监测配置变化间隔 -->
+<!-- debug=true表示将打印出logback内部日志信息 -->
+<configuration scan="true" scanPeriod="300 seconds" debug="false">
+	<property name="appName" value="cpserver" />
+	<!-- 日志路径 -->
+	<property name="basePath" value="F://whty//01-company//hce//svn//trunk//src//log" />
+	<timestamp key="byDate" datePattern="yyyyMMdd" />
+	<timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss" />
+	<contextName>${appName}</contextName>
+	<!-- 控制台输出 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoder 默认配置为PatternLayoutEncoder -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<!-- 普通日志文件输出  按时间每日分割和按大小每100MB进行分割-->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${basePath}/${appName}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${basePath}/${appName}-%d{yyyyMMdd}-%i.gz</FileNamePattern>
+			<MaxHistory>10000</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>100MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<!-- 过滤器：只打印错误级别之外的日志 -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>DENY</onMatch>
+			<onMismatch>ACCEPT</onMismatch>
+		</filter>
+
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{26} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<!-- 错误日志文件输出  按时间每日分割和按大小每100MB进行分割-->
+	<appender name="ERR-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${basePath}/${appName}-error.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${basePath}/${appName}-error-%d{yyyyMMdd}-%i.gz</FileNamePattern>
+			<MaxHistory>10000</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>100MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<!-- 过滤器：只打印错误级别日志 -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+
+		<encoder>
+			<pattern>%d{MM-dd HH:mm:ss.SSS} [%thread] %logger{26} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<!-- 日志输出细节 -->
+	<logger name="org.apache.struts2" level="DEBUG" />
+	<logger name="com.ibatis" level="DEBUG" />
+	<logger name="com.ibatis.common.jdbc.SimpleDataSource" level="DEBUG" />
+	<logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG" />
+	<logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="DEBUG" />
+	<logger name="java.sql.Connection" level="DEBUG" />
+	<logger name="java.sql.Statement" level="DEBUG" />
+	<logger name="java.sql.PreparedStatement" level="DEBUG" />
+
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="ERR-FILE" />
+	</root>
+</configuration> 

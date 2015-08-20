@@ -1,0 +1,28 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   <soap:Header>
+      <Action xmlns="http://www.w3.org/2005/08/addressing">http://globalplatform.org/globaleligibilityinfo/GlobalEligibilityInfo/CheckGlobalEligibilityResponse</Action>
+      <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:f16ffb76-ba97-4a04-90ec-5312d05870c9</MessageID>
+      <RelatesTo xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:9baefdd5-277b-4f8c-b2ba-21e7789122d0</RelatesTo>
+   </soap:Header>
+   <soap:Body>
+      <CheckGlobalEligibilityResponse xmlns="http://namespaces.globalplatform.org/systems-messaging/2.1.0" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns4="http://namespaces.globalplatform.org/systems-profiles/1.1.2">
+         <FunctionExecutionStatus>
+            <Status>EXECUTED_SUCCESS</Status>
+            <StatusCodeData>
+               <Reason>000000</Reason>
+               <Message>成功且无后继</Message>
+            </StatusCodeData>
+         </FunctionExecutionStatus>
+         <Extensions>
+            <ns3:ApplyResponse>
+               <ns3:ImageId>0019A</ns3:ImageId>
+               <ns3:CardHolderName>TU ZI</ns3:CardHolderName>
+               <ns3:PanExpire>2023-09-28+08:00</ns3:PanExpire>
+            </ns3:ApplyResponse>
+         </Extensions>
+         <ResponseData>
+            <Eligible>true</Eligible>
+         </ResponseData>
+      </CheckGlobalEligibilityResponse>
+   </soap:Body>
+</soap:Envelope>

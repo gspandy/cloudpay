@@ -1,0 +1,22 @@
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+   <env:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:To env:mustUnderstand="true">https://145.1.254.25:8400/HCE/services</wsa:To>
+      <wsa:Action>http://globalplatform.org/globalservicemanagement/GlobalServiceManagementCallBack/TerminateService</wsa:Action>
+      <wsa:MessageID>urn:uuid:2a3132a6-7a2c-4d04-96e2-a5709d7d6556</wsa:MessageID>
+      <wsa:RelatesTo>20150730210715384610</wsa:RelatesTo>
+   </env:Header>
+   <env:Body>
+      <ns5:TerminateServiceResponse xmlns:ns2="http://namespaces.globalplatform.org/systems-profiles/1.1.2" xmlns:ns3="http://www.w3.org/2000/09/xmldsig#" xmlns:ns4="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns5="http://namespaces.globalplatform.org/systems-messaging/2.1.0">
+         <ns5:FunctionExecutionStatus>
+            <ns5:Status>EXECUTED_SUCCESS</ns5:Status>
+            <ns5:StatusCodeData/>
+         </ns5:FunctionExecutionStatus>
+         <ns5:Extensions Definition="http://www.gi-de.com/gd-extionsion-1.0.0">
+            <ns4:EntityInfo>
+               <ns4:EntityType>TOKEN_PAN</ns4:EntityType>
+               <ns4:Value>6235240000020010555</ns4:Value>
+            </ns4:EntityInfo>
+         </ns5:Extensions>
+      </ns5:TerminateServiceResponse>
+   </env:Body>
+</env:Envelope>

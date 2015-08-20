@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="commonMapper">
+	
+	<!-- 获取序列当前值 TODO 先获取下一个值再获取当前值-->
+	<select id="getCurrentSequence" resultType="Long" parameterType="HashMap" useCache="false" flushCache="true">
+		select (prevval for ${seqName}) from SYSIBM.SYSDUMMY1
+    </select>
+    
+	<!-- 获取序列下一个值 -->
+    <select id="getNextSequence" resultType="Long" parameterType="HashMap" useCache="false" flushCache="true">
+		select (nextval for ${seqName}) from SYSIBM.SYSDUMMY1
+    </select>
+</mapper>

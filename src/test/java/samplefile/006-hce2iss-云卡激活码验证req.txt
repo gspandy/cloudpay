@@ -1,0 +1,25 @@
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+   <env:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:To env:mustUnderstand="true">https://145.1.254.25:8400/HCE/services</wsa:To>
+      <wsa:Action>http://globalplatform.org/globaleligibilityinfo/GlobalEligibilityInfo</wsa:Action>
+      <wsa:MessageID>urn:uuid:a1c121b6-8187-402f-b970-f60e76f9cd6e</wsa:MessageID>
+   </env:Header>
+   <env:Body>
+      <ns4:CheckGlobalEligibilityRequest xmlns:ns2="http://namespaces.globalplatform.org/systems-profiles/1.1.2" xmlns:ns3="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns4="http://namespaces.globalplatform.org/systems-messaging/2.1.0" xmlns:ns5="http://www.w3.org/2000/09/xmldsig#">
+         <ns4:FunctionCallIdentifier>0010000</ns4:FunctionCallIdentifier>
+         <ns4:Extensions Definition="http://www.gi-de.com/gd-extionsion-1.0.0">
+            <ns3:ActivationInfo>
+               <ns3:UserId>880701199106012114</ns3:UserId>
+               <ns3:TokenPAN>6251640000020015425</ns3:TokenPAN>
+               <ns3:ActivationCode>147232</ns3:ActivationCode>
+            </ns3:ActivationInfo>
+         </ns4:Extensions>
+         <ns4:SecureElement Type="CPS" xsi:type="ns4:SEId_GenericType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns4:Id>bb37481f-72c9-483b-8a76-101447da8ddb</ns4:Id>
+         </ns4:SecureElement>
+         <ns4:Service>
+            <ns4:ServiceId>64083300</ns4:ServiceId>
+         </ns4:Service>
+      </ns4:CheckGlobalEligibilityRequest>
+   </env:Body>
+</env:Envelope>

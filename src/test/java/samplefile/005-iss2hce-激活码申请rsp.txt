@@ -1,0 +1,21 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   <soap:Header>
+      <Action xmlns="http://www.w3.org/2005/08/addressing">http://globalplatform.org/globaleligibilityinfo/GlobalEligibilityInfo/CheckGlobalEligibilityResponse</Action>
+      <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:9009cdd2-b8bd-42a9-aa1a-514f5bad5cae</MessageID>
+      <RelatesTo xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:60c80399-20c1-45f3-8d93-119f8ca77848</RelatesTo>
+   </soap:Header>
+   <soap:Body>
+      <CheckGlobalEligibilityResponse xmlns="http://namespaces.globalplatform.org/systems-messaging/2.1.0" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns4="http://namespaces.globalplatform.org/systems-profiles/1.1.2">
+         <FunctionExecutionStatus>
+            <Status>EXECUTED_SUCCESS</Status>
+            <StatusCodeData>
+               <Reason>000000</Reason>
+               <Message>成功且无后继</Message>
+            </StatusCodeData>
+         </FunctionExecutionStatus>
+         <ResponseData>
+            <Eligible>true</Eligible>
+         </ResponseData>
+      </CheckGlobalEligibilityResponse>
+   </soap:Body>
+</soap:Envelope>

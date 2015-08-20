@@ -1,0 +1,21 @@
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+   <env:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:To env:mustUnderstand="true">https://145.112.66.133:8085</wsa:To>
+      <wsa:Action>http://globalplatform.org/globalservicemanagement/GlobalServiceManagementCallBack/TerminateService</wsa:Action>
+      <wsa:MessageID>urn:uuid:7ea2be8b-4273-4bac-bdd2-3f862f208ce9</wsa:MessageID>
+   </env:Header>
+   <env:Body>
+      <ns2:TerminateServiceResponse xmlns:ns2="http://namespaces.globalplatform.org/systems-messaging/2.1.0" xmlns:ns3="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns4="http://namespaces.globalplatform.org/systems-profiles/1.1.2" xmlns:ns5="http://www.w3.org/2000/09/xmldsig#">
+         <ns2:FunctionExecutionStatus>
+            <ns2:Status>EXECUTED_SUCCESS</ns2:Status>
+            <ns2:StatusCodeData/>
+         </ns2:FunctionExecutionStatus>
+         <ns2:Extensions Definition="http://www.gi-de.com/gd-extionsion-1.0.0">
+            <ns3:EntityInfo>
+               <ns3:EntityType>TOKEN_PAN</ns3:EntityType>
+               <ns3:Value>6235240000020009144</ns3:Value>
+            </ns3:EntityInfo>
+         </ns2:Extensions>
+      </ns2:TerminateServiceResponse>
+   </env:Body>
+</env:Envelope>

@@ -1,0 +1,28 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   <soap:Header>
+      <Action xmlns="http://www.w3.org/2005/08/addressing">@value1@</Action>
+      <MessageID xmlns="http://www.w3.org/2005/08/addressing">@value2@</MessageID>
+      <RelatesTo xmlns="http://www.w3.org/2005/08/addressing">@value3@</RelatesTo>
+   </soap:Header>
+   <soap:Body>
+      <CheckGlobalEligibilityResponse xmlns="http://namespaces.globalplatform.org/systems-messaging/2.1.0" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns4="http://namespaces.globalplatform.org/systems-profiles/1.1.2">
+         <FunctionExecutionStatus>
+            <Status>@value4@</Status>
+            <StatusCodeData>
+               <Reason>@value5@</Reason>
+               <Message>@value6@</Message>
+            </StatusCodeData>
+         </FunctionExecutionStatus>
+         <Extensions>
+            <ns3:ApplyResponse>
+               <ns3:ImageId>@value7@</ns3:ImageId>
+               <ns3:CardHolderName>@value8@</ns3:CardHolderName>
+               <ns3:PanExpire>@value9@</ns3:PanExpire>
+            </ns3:ApplyResponse>
+         </Extensions>
+         <ResponseData>
+            <Eligible>@value10@</Eligible>
+         </ResponseData>
+      </CheckGlobalEligibilityResponse>
+   </soap:Body>
+</soap:Envelope>

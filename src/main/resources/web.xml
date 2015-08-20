@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<!-- 银联渠道 -->
+	<WebAppServlet>
+    	<servletName>GlobalEligibilityInfo</servletName>
+	    <servletClass>com.whty.controlunionpay.GlobalEligibilityInfo</servletClass>
+	    <InitParam>
+	    	<name>UNIONPAY_HOME</name>
+	    	<value>/home/cpserver/unionpay/</value>
+	    </InitParam>
+	</WebAppServlet>
+	<WebAppServletMapping>
+	    <servletName>GlobalEligibilityInfo</servletName>
+	    <urlPattern>http://globalplatform.org/globaleligibilityinfo/GlobalEligibilityInfo/CheckGlobalEligibilityRequest</urlPattern>
+	    <chanlno>UNIONPAY</chanlno>
+	</WebAppServletMapping>
+	<!-- 手机渠道 -->
+	<WebAppServlet>
+    	<servletName>AppGlobalEligibilityInfo</servletName>
+	    <servletClass>com.whty.controlapp.AppGlobalEligibilityInfo</servletClass>
+	    <InitParam>
+	    	<name>PHONEAPP_HOME</name>
+	    	<value>/home/cpserver/phoneapp/</value>
+	    </InitParam>
+	</WebAppServlet>
+	<WebAppServletMapping>
+	    <servletName>AppGlobalEligibilityInfo</servletName>
+	    <urlPattern>/AppService/GlobalEligibilityInfo</urlPattern>
+	    <chanlno>PHONEAPP</chanlno>
+	</WebAppServletMapping>
+	
+	<!-- 核心渠道 -->
+	<!-- 报文格式:8个字符  -->	
+	<WebAppServlet>
+    	<servletName>InnerCore1001</servletName>
+	    <servletClass>com.whty.controlinnercore.InnerCore1001</servletClass>
+	    <InitParam>
+	    	<name>INNERCORE_HOME</name>
+	    	<value>/home/cpserver/innercore/</value>
+	    </InitParam>
+	</WebAppServlet>
+	<WebAppServletMapping>
+	    <servletName>InnerCore1001</servletName>
+	    <urlPattern>O2C01001</urlPattern>
+	    <chanlno>INNERCORE</chanlno>
+	</WebAppServletMapping>
+	
+</web-app>

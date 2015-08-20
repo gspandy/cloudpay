@@ -1,0 +1,22 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   <soap:Header>
+      <Action xmlns="http://www.w3.org/2005/08/addressing">http://globalplatform.org/globalservicemanagement/GlobalServiceManagement/TerminateService</Action>
+      <MessageID xmlns="http://www.w3.org/2005/08/addressing">20150730210715384610</MessageID>
+      <To xmlns="http://www.w3.org/2005/08/addressing">https://9.234.250.232:8085/wsgw/ws</To>
+      <ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+         <Address>http://www.w3.org/2005/08/addressing/none</Address>
+      </ReplyTo>
+   </soap:Header>
+   <soap:Body>
+      <TerminateServiceRequest xmlns="http://namespaces.globalplatform.org/systems-messaging/2.1.0" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns4="http://namespaces.globalplatform.org/systems-profiles/1.1.2">
+         <FunctionCallIdentifier>64083300</FunctionCallIdentifier>
+         <ValidityPeriod>1</ValidityPeriod>
+         <Extensions>
+            <ns3:EntityInfo>
+               <ns3:EntityType>TOKEN_PAN</ns3:EntityType>
+               <ns3:Value>6235240000020010555</ns3:Value>
+            </ns3:EntityInfo>
+         </Extensions>
+      </TerminateServiceRequest>
+   </soap:Body>
+</soap:Envelope>

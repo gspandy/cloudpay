@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+	<NettyService>
+		<connectionTimeout>20000</connectionTimeout>
+		<port>80</port>
+		<protocol>HTTP/1.1</protocol>
+		<format>SOAP</format>
+		<chanlno>UNIONPAY</chanlno>
+		<uri>/UnionPayService</uri>
+	</NettyService>
+	<NettyService>
+		<connectionTimeout>20000</connectionTimeout>
+		<port>81</port>
+		<protocol>HTTP/1.1</protocol>
+		<format>JSON</format>
+		<chanlno>PHONEAPP</chanlno>
+		<uri>/AppService</uri>
+	</NettyService>
+	<NettyService>
+		<connectionTimeout>20000</connectionTimeout>
+		<port>9080</port>
+		<protocol>TCP</protocol>
+		<format>XML</format>
+		<chanlno>CORE</chanlno>
+		<uri></uri>
+	</NettyService>
+</server>

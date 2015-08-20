@@ -1,0 +1,22 @@
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+   <env:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:To env:mustUnderstand="true">https://145.1.254.25:8400/HCE/services</wsa:To>
+      <wsa:Action>http://globalplatform.org/globalservicemanagement/GlobalServiceManagementCallBack/SuspendOrResumeService</wsa:Action>
+      <wsa:MessageID>urn:uuid:cfe9d467-ab51-4b06-82ab-bb43eabe855d</wsa:MessageID>
+      <wsa:RelatesTo>20150725171749384028</wsa:RelatesTo>
+   </env:Header>
+   <env:Body>
+      <ns4:SuspendOrResumeServiceResponse xmlns:ns2="http://namespaces.globalplatform.org/systems-profiles/1.1.2" xmlns:ns3="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns4="http://namespaces.globalplatform.org/systems-messaging/2.1.0" xmlns:ns5="http://www.w3.org/2000/09/xmldsig#">
+         <ns4:FunctionExecutionStatus>
+            <ns4:Status>EXECUTED_SUCCESS</ns4:Status>
+         </ns4:FunctionExecutionStatus>
+         <ns4:Extensions Definition="http://www.gi-de.com/gd-extionsion-1.0.0">
+            <ns3:EntityInfo>
+               <ns3:EntityType>TOKEN_PAN</ns3:EntityType>
+               <ns3:Value>6251640000020016480</ns3:Value>
+               <ns3:OperationReason>LOST_FOUND</ns3:OperationReason>
+            </ns3:EntityInfo>
+         </ns4:Extensions>
+      </ns4:SuspendOrResumeServiceResponse>
+   </env:Body>
+</env:Envelope>

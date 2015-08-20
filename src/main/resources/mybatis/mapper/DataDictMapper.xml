@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dataDictMapper">
+	<resultMap id="BaseResultMap" type="DataDict">
+		<result column="ID" property="id" jdbcType="DECIMAL" />
+		<result column="ITEM_NAME" property="itemName" jdbcType="VARCHAR" />
+		<result column="COL_NAME_CN" property="colNameCn" jdbcType="VARCHAR" />
+		<result column="COL_NAME" property="colName" jdbcType="VARCHAR" />
+		<result column="ITEM_VAL" property="itemVal" jdbcType="VARCHAR" />
+		<result column="ITEM_TYPE" property="itemType" jdbcType="VARCHAR" />
+		<result column="ITEM_DESC" property="itemDesc" jdbcType="VARCHAR" />
+		<result column="SPARE1" property="spare1" jdbcType="VARCHAR" />
+		<result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="LAST_UPD_TIME" property="lastUpdTime" jdbcType="TIMESTAMP" />
+		<result column="STATUS" property="status" jdbcType="VARCHAR" />
+		<result column="HANDLE_STATUS" property="handleStatus" jdbcType="VARCHAR" />
+        <result column="CHECK_STATUS" property="checkStatus" jdbcType="VARCHAR" />
+		<result column="CREATE_USER_NAME" property="createUserName" jdbcType="VARCHAR" />
+	</resultMap>
+	<insert id="insertModel" parameterType="DataDict">
+		insert into T_DATA_DICT (ID,
+		ITEM_NAME, COL_NAME_CN,
+		COL_NAME, ITEM_VAL, ITEM_DESC,
+		SPARE1,ITEM_TYPE,STATUS,HANDLE_STATUS,CREATE_USER_NAME
+		)
+		values
+		(#{id}, #{itemName},
+		#{colNameCn},
+		#{colName},#{itemVal}, #{itemDesc},
+		#{spare1,jdbcType=VARCHAR},#{itemType},#{status},#{handleStatus},#{createUserName}
+		)
+	</insert>
+	<update id="updateById" parameterType="DataDict">
+		update T_DATA_DICT
+		set
+		ITEM_NAME = #{itemName},
+		COL_NAME_CN = #{colNameCn},
+		COL_NAME = #{colName},
+		ITEM_VAL = #{itemVal},
+		ITEM_TYPE = #{itemType},
+		ITEM_DESC = #{itemDesc},
+		SPARE1 = #{spare1},
+		LAST_UPD_TIME = SYSDATE
+        WHERE ID=#{id}
+	</update>
+	<delete id="deleteById" parameterType="DataDict">		
+		delete from T_DATA_DICT 
+		 WHERE ID  = #{id}
+	</delete>
+	
+	<delete id="deleteByListId" parameterType="List">		
+		delete from T_DATA_DICT 
+		 WHERE ID in  
+	     <foreach item="id" index="index" collection="list" open="("
+				separator="," close=")">
+				#{id}
+		 </foreach>
+	</delete>
+	
+	<select id="checkDataDict" parameterType="DataDict" resultType="int">
+		SELECT count(1)
+		FROM T_DATA_DICT 
+		WHERE ITEM_NAME = #{itemName} and COL_NAME = #{colName} 
+		and ITEM_VAL = #{itemVal}
+		<if test="id != null and id != ''">
+			and ID != #{id}
+		</if>
+	</select>
+	<select id="selectById" parameterType="DataDict" resultMap="BaseResultMap" >
+		SELECT 
+        ID, ITEM_NAME, COL_NAME_CN, COL_NAME, ITEM_VAL, ITEM_DESC,
+		SPARE1,CREATE_TIME, LAST_UPD_TIME,ITEM_TYPE
+        FROM T_DATA_DICT T WHERE T.ID = #{id}
+	</select>	
+	<select id="getCount" parameterType="DataDict"
+		resultType="int">
+		SELECT COUNT(1) FROM T_DATA_DICT T WHERE 1=1    
+		<if test="id != null and id!=''">
+			AND t.ID = #{id}
+		</if>
+		<if test="colNameCn != null and colNameCn!= ''">
+			AND regexp_like(t.COL_NAME_CN, #{colNameCn})
+		</if>
+		<if test="itemName != null and itemName!= ''">
+			AND regexp_like(t.ITEM_NAME, #{itemName})
+		</if>
+		<if test="colName != null and colName!= ''">
+			AND regexp_like(t.COL_NAME, #{colName})
+		</if>
+		<if test="itemVal != null and itemVal != ''">
+			AND T.ITEM_VAL = #{itemVal}
+		</if>
+		<if test="itemDesc != null and itemDesc != ''">
+			AND regexp_like(T.ITEM_DESC, #{itemDesc})
+		</if>
+		AND T.STATUS = '00'
+		And T.HANDLE_STATUS = '00'
+	</select>
+	
+	<select id="getDataDictInfos"  parameterType="DataDict" resultMap="BaseResultMap">
+            SELECT ID,
+               ITEM_NAME,
+               COL_NAME_CN,
+               COL_NAME,
+               ITEM_VAL,
+               ITEM_DESC,
+               ITEM_TYPE,
+               SPARE1
+         FROM T_DATA_DICT T
+         where 1 = 1
+         AND STATUS = '00'
+         AND HANDLE_STATUS = '00'
+	</select>
+		
+    <sql id="whereSql">
+        <if test="id != null and id!=''">
+            AND t.ID = #{id}
+        </if>
+        <if test="colNameCn != null and colNameCn!= ''">
+            AND regexp_like(t.COL_NAME_CN,#{colNameCn})
+        </if>
+        <if test="itemName != null and itemName!= ''">
+            AND regexp_like(t.ITEM_NAME,#{itemName})
+        </if>
+        <if test="colName != null and colName!= ''">
+            AND regexp_like(t.COL_NAME,#{colName})
+        </if>
+        <if test="itemVal != null and itemVal != ''">
+            AND regexp_like(T.ITEM_VAL, #{itemVal})
+        </if>
+        <if test="itemDesc != null and itemDesc != ''">
+            AND regexp_like(T.ITEM_DESC,#{itemDesc})
+        </if>
+        AND T.STATUS = '00'
+        And T.HANDLE_STATUS = '00'
+        ORDER BY
+        <if test="fieldSort != null and fieldSort!=''">
+            ${fieldSort}
+        </if>
+        <if test="fieldSort == null or fieldSort ==''">
+            ITEM_NAME,  COL_NAME
+        </if>
+    </sql>
+   <select id="selectList" resultMap="BaseResultMap"
+            parameterType="DataDict">
+         	 SELECT
+             	ID,
+	            ITEM_NAME,
+	            COL_NAME_CN,
+	            COL_NAME,
+	            ITEM_VAL,
+	            ITEM_DESC,
+	            ITEM_TYPE,
+	            SPARE1,
+	            CREATE_TIME,
+	            LAST_UPD_TIME,
+	            STATUS,
+	            HANDLE_STATUS,
+	            CREATE_USER_NAME
+	        FROM
+	            T_DATA_DICT T
+    </select>
+</mapper>

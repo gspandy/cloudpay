@@ -1,0 +1,47 @@
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+   <env:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:To env:mustUnderstand="true">https://145.1.254.25:8400/HCE/services</wsa:To>
+      <wsa:Action>http://globalplatform.org/globalservicemanagement/GlobalServiceManagementCallBack/DeployService</wsa:Action>
+      <wsa:MessageID>urn:uuid:cc6a0814-0b4e-4256-9c5b-888f1c94fae6</wsa:MessageID>
+   </env:Header>
+   <env:Body>
+      <ns2:DeployServiceResponse xmlns:ns2="http://namespaces.globalplatform.org/systems-messaging/2.1.0" xmlns:ns3="http://namespaces.globalplatform.org/systems-profiles/1.1.2" xmlns:ns4="http://www.gi-de.com/gd-extionsion-1.0.0" xmlns:ns5="http://www.w3.org/2000/09/xmldsig#">
+         <ns2:FunctionExecutionStatus>
+            <ns2:Status>EXECUTED_SUCCESS</ns2:Status>
+            <ns2:StatusCodeData>
+               <ns2:Reason/>
+               <ns2:Message/>
+            </ns2:StatusCodeData>
+         </ns2:FunctionExecutionStatus>
+         <ns2:Extensions Definition="http://www.gi-de.com/gd-extionsion-1.0.0">
+            <ns4:HceCardInfo>
+               <ns4:UserId>ljq</ns4:UserId>
+               <ns4:CpsId>c9067a65-146c-4075-a851-9ee75e7663fb</ns4:CpsId>
+               <ns4:UserName/>
+               <ns4:IDType/>
+               <ns4:IDValue/>
+               <ns4:Email/>
+               <ns4:PAN>6223190000016102</ns4:PAN>
+               <ns4:ApplyDate>2015-07-28+08:00</ns4:ApplyDate>
+               <ns4:ActivateDate>2015-07-28+08:00</ns4:ActivateDate>
+               <ns4:ValidateLUKCount>0</ns4:ValidateLUKCount>
+               <ns4:TokenPAN>6235240000020009540</ns4:TokenPAN>
+               <ns4:ExpireDate>2023-09-28+08:00</ns4:ExpireDate>
+               <ns4:Status>21</ns4:Status>
+               <ns4:Lost>false</ns4:Lost>
+               <ns4:Locked>false</ns4:Locked>
+               <ns4:DeviceModel>MX4 Pro</ns4:DeviceModel>
+               <ns4:OsVersion>4.4.4</ns4:OsVersion>
+               <ns4:DeviceId/>
+               <ns4:IMEI>865863025568853</ns4:IMEI>
+               <ns4:WalletName>‘∆÷ß∏∂”¶”√</ns4:WalletName>
+               <ns4:WalletSignature/>
+               <ns4:WalletVersion/>
+            </ns4:HceCardInfo>
+         </ns2:Extensions>
+         <ns2:ResponseData>
+            <ns2:ServiceInstanceState>21</ns2:ServiceInstanceState>
+         </ns2:ResponseData>
+      </ns2:DeployServiceResponse>
+   </env:Body>
+</env:Envelope>
